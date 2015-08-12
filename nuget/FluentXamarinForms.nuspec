@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>FluentXamarinForms</id>
+        <version>0.1</version>
+        <title>Fluent API for Xamarin.Forms</title>
+        <authors>Marcel E. Malik</authors>
+        <owners>Marcel E. Malik</owners>
+        <licenseUrl>https://raw.github.com/MarcelMalik/FluentXamarinForms/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/MarcelMalik/FluentXamarinForms</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Fluent API for Xamarin.Forms. To simple create a UI with a fluent interface.
+            This package is compatible with the following .net platforms: net4+sl5+wp8+win8+monotouch+monoAndroid</description>
+        <summary>A .NET client library to access SQLite embedded database files in a LINQ manner.
+            This package provides Async extensions to the core SQLite.Net package.</summary>
+        <releaseNotes>https://github.com/MarcelMalik/FluentXamarinForms/commits</releaseNotes>
+        <tags>fluent interface xamarin.forms xamarin forms ios android windowsphone windows xamarin monotouch monodroid</tags>
+    </metadata>
+    <dependencies>
+        <dependency id="Xamarin.Forms" version="1.4.0" />
+    </dependencies>
+    <files>
+        <file src="FluentXamarinForms\FluentXamarinForms.dll" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FluentXamarinForms.dll" />
+    </files>
+</package>
