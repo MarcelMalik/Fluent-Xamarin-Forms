@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public class FluentAbsoluteLayout : FluentLayout<AbsoluteLayout, View>
+    public class FluentAbsoluteLayout : FluentLayout<FluentAbsoluteLayout, AbsoluteLayout, View>
     {
         public FluentAbsoluteLayout AddChild (View view, Point position)
         {
@@ -12,7 +12,8 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentAbsoluteLayout AddChild<TChild> (FluentView<TChild> fluentView, Point position)
+        // TODO
+        /*public FluentAbsoluteLayout AddChild<TChild> (FluentView<FluentAbsoluteLayout, TChild> fluentView, Point position)
             where TChild : View, new()
         {
             this.BuilderActions.Add (absoluteLayout => {
@@ -21,7 +22,7 @@ namespace FluentXamarinForms
             });
 
             return this;
-        }
+        }*/
 
         public FluentAbsoluteLayout AddChild (View view, 
             Rectangle bounds, AbsoluteLayoutFlags flags = AbsoluteLayoutFlags.None)
@@ -33,7 +34,8 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentAbsoluteLayout AddChild<TChild> (FluentView<TChild> fluentView,
+        // TODO
+        /*public FluentAbsoluteLayout AddChild<TChild> (FluentView<FluentAbsoluteLayout, TChild> fluentView,
             Rectangle bounds, AbsoluteLayoutFlags flags = AbsoluteLayoutFlags.None)
             where TChild : View, new()
         {
@@ -43,6 +45,6 @@ namespace FluentXamarinForms
             });
 
             return this;
-        }
+        }*/
     }
 }

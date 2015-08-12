@@ -6,11 +6,36 @@ using System.Linq;
 
 namespace FluentXamarinForms
 {
-    public class FluentGrid : FluentLayout<Grid, View>
+    public class FluentGrid : FluentGridBase<FluentGrid, Grid>
     {
+        public FluentGrid ()
+            : base ()
+        {
+        }
+
+        public FluentGrid (Grid instance)
+            : base (instance)
+        {
+        }
+    }
+
+    public class FluentGridBase<TFluent, T>  : FluentLayout<TFluent, T, View>
+        where TFluent: FluentBase<T>
+        where T: Grid, new()
+        //where TChild : View//, new()
+    {
+        public FluentGridBase ()
+        {
+        }
+
+        public FluentGridBase (T instance)
+            : base (instance)
+        {
+        }
+
         //TODO: AddChild with int left, int right, int top, int bottom ?
-        public FluentGrid AddChild (View view, int column = 0, int row = 0, 
-                                    int columnspan = 1, int rowspan = 1)
+        public TFluent AddChild (View view, int column = 0, int row = 0, 
+                                 int columnspan = 1, int rowspan = 1)
         {
             if (view == null)
                 throw new ArgumentNullException ("view");
@@ -32,10 +57,11 @@ namespace FluentXamarinForms
                     grid.Children.Add (view);
                 });
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid AddChild<TChild> (FluentView<TChild> fluentView, 
+        // TODO
+        /*public TFluent AddChild<TChild> (FluentView<FluentGrid, TChild> fluentView, 
                                             int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
             where TChild : View, new()
         {
@@ -60,24 +86,25 @@ namespace FluentXamarinForms
                     grid.Children.Add (view);
                 });
 
-            return this;
-        }
+            return this as TFluent;
+        }*/
 
-        public FluentGrid AddChildHorizontal (View view)
+        public TFluent AddChildHorizontal (T view)
         {
             this.BuilderActions.Add (grid => grid.Children.AddHorizontal (view));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid AddChildHorizontal (IEnumerable<View> views)
+        public TFluent AddChildHorizontal (IEnumerable<View> views)
         {
             this.BuilderActions.Add (grid => grid.Children.AddHorizontal (views));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid AddChildHorizontal<TChild>(FluentView<TChild> fluentview)
+        // TODO
+        /*public FluentGrid AddChildHorizontal<TChild>(FluentView<FluentGrid, TChild> fluentview)
             where TChild : View, new()
         {
             this.BuilderActions.Add (grid => {
@@ -86,9 +113,10 @@ namespace FluentXamarinForms
             });
 
             return this;
-        }
+        }*/
 
-        public FluentGrid AddChildHorizontal<TChild> (IEnumerable<FluentView<TChild>> fluentViews)
+        // TODO
+        /*public FluentGrid AddChildHorizontal<TChild> (IEnumerable<FluentView<FluentGrid, TChild>> fluentViews)
             where TChild : View, new()
         {
             this.BuilderActions.Add (grid => {
@@ -99,23 +127,24 @@ namespace FluentXamarinForms
             });
 
             return this;
-        }
+        }*/
 
-        public FluentGrid AddChildVertical (View child)
+        public TFluent AddChildVertical (View view)
         {
-            this.BuilderActions.Add (grid => grid.Children.AddVertical (child));
+            this.BuilderActions.Add (grid => grid.Children.AddVertical (view));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid AddChildVertical (IEnumerable<View> childs)
+        public TFluent AddChildVertical (IEnumerable<View> views)
         {
-            this.BuilderActions.Add (grid => grid.Children.AddVertical (childs));
+            this.BuilderActions.Add (grid => grid.Children.AddVertical (views));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid AddChildVertical<TChild>(FluentView<TChild> fluentChild)
+        // TODO
+        /*public TFluent AddChildVertical<TChild>(FluentView<FluentGrid, TChild> fluentChild)
             where TChild : View, new()
         {
             this.BuilderActions.Add (grid => {
@@ -123,10 +152,11 @@ namespace FluentXamarinForms
                 grid.Children.AddVertical (child);
             });
 
-            return this;
-        }
+            return this as TFluent;
+        }*/
 
-        public FluentGrid AddChildVertical<TChild> (IEnumerable<FluentView<TChild>> fluentChilds)
+        // TODO
+        /*public TFluent AddChildVertical<TChild> (IEnumerable<FluentView<FluentGrid, TChild>> fluentChilds)
             where TChild : View, new()
         {
             this.BuilderActions.Add (grid => {
@@ -136,54 +166,54 @@ namespace FluentXamarinForms
                 });
             });
 
-            return this;
-        }
+            return this as TFluent;
+        }*/
 
 
-        public FluentGrid ColumnDefinition (double value)
+        public TFluent ColumnDefinition (double value)
         {
             this.BuilderActions.Add (grid => grid.ColumnDefinitions.Add (
                     new ColumnDefinition { Width = new GridLength (value) }));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid ColumnDefinition (double value, GridUnitType type)
+        public TFluent ColumnDefinition (double value, GridUnitType type)
         {
             this.BuilderActions.Add (grid => grid.ColumnDefinitions.Add (
                     new ColumnDefinition { Width = new GridLength (value, type) }));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid ColumnSpacing (double spacing)
+        public TFluent ColumnSpacing (double spacing)
         {
             this.BuilderActions.Add (grid => grid.ColumnSpacing = spacing);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid RowDefinition (double value)
+        public TFluent RowDefinition (double value)
         {
             this.BuilderActions.Add (grid => grid.RowDefinitions.Add (
                     new RowDefinition { Height = new GridLength (value) }));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid RowDefinition (double value, GridUnitType type)
+        public TFluent RowDefinition (double value, GridUnitType type)
         {
             this.BuilderActions.Add (grid => grid.RowDefinitions.Add (
                     new RowDefinition { Height = new GridLength (value, type) }));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentGrid RowSpacing (double spacing)
+        public TFluent RowSpacing (double spacing)
         {
             this.BuilderActions.Add (grid => grid.RowSpacing = spacing);
 
-            return this;
+            return this as TFluent;
         }
     }
 }

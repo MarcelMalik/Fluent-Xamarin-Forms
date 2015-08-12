@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public class FluentActivityIndicator : FluentView<ActivityIndicator>
+    public class FluentActivityIndicator : FluentView<FluentActivityIndicator, ActivityIndicator>
     {
         public FluentActivityIndicator Color (Color color)
         {

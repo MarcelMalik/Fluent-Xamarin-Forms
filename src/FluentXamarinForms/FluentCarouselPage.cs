@@ -3,57 +3,89 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public abstract class FluentPage : FluentVisualElement<Page>
+    public class FluentPage : FluentPageBase<FluentPage, Page>
     {
-        public FluentPage BackgroundImage (string backgroundImage)
+        
+    }
+
+    public class FluentContentPage : FluentPageBase<FluentContentPage, ContentPage>
+    {
+        public FluentContentPage ()
+            : base ()
+        {
+        }
+
+        public FluentContentPage (ContentPage instance)
+            : base (instance)
+        {
+        }
+    }
+
+
+    public abstract class FluentPageBase<TFluent, T> : FluentVisualElement<TFluent, T>
+        where TFluent: FluentBase<T>
+        where T : Page, new()
+    {
+        public FluentPageBase ()
+            : base ()
+        {
+        }
+
+        public FluentPageBase (T instance)
+            : base (instance)
+        {
+        }
+
+        public TFluent BackgroundImage (string backgroundImage)
         {
             this.BuilderActions.Add (page => page.BackgroundImage = backgroundImage);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage Icon (FileImageSource icon)
+        public TFluent Icon (FileImageSource icon)
         {
             this.BuilderActions.Add (page => page.Icon = icon);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage IsBusy (bool busy)
+        public TFluent IsBusy (bool busy)
         {
             this.BuilderActions.Add (page => page.IsBusy = busy);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage Padding (Thickness padding)
+        public TFluent Padding (Thickness padding)
         {
             this.BuilderActions.Add (page => page.Padding = padding);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage Title (string text)
+        public TFluent Title (string text)
         {
             this.BuilderActions.Add (page => page.Title = text);
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage AddToolbarItem (ToolbarItem item)
+        public TFluent AddToolbarItem (ToolbarItem item)
         {
-            this.BuilderActions.Add (page => page.ToolbarItems.Add(item));
+            this.BuilderActions.Add (page => page.ToolbarItems.Add (item));
 
-            return this;
+            return this as TFluent;
         }
 
-        public FluentPage RemoveToolbarItem (ToolbarItem item)
+        public TFluent RemoveToolbarItem (ToolbarItem item)
         {
-            this.BuilderActions.Add (page => page.ToolbarItems.Remove(item));
+            this.BuilderActions.Add (page => page.ToolbarItems.Remove (item));
 
-            return this;
+            return this as TFluent;
         }
     }
+
     public abstract class FluentMultiPage<TPageContent> : FluentPage
     {
         

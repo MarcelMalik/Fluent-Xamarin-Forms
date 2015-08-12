@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public class FluentBoxView : FluentView<BoxView>
+    public class FluentBoxView : FluentView<FluentBoxView, BoxView>
     {
         public FluentBoxView Color (Color color)
         {

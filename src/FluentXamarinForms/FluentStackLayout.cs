@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public class FluentStackLayout : FluentView<StackLayout>
+    public class FluentStackLayout : FluentView<FluentStackLayout, StackLayout>
     {
         public FluentStackLayout AddChild(View view)
         {
@@ -17,7 +17,8 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentStackLayout AddChild<TChild>(FluentView<TChild> fluentView)
+        // TODO
+        /*public FluentStackLayout AddChild<TChild>(FluentView<FluentStackLayout, TChild> fluentView)
             where TChild : View, new()
         {
             if (fluentView == null)
@@ -29,6 +30,6 @@ namespace FluentXamarinForms
             });
 
             return this;
-        }
+        }*/
     }
 }

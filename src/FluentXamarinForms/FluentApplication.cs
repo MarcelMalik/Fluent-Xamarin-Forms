@@ -12,7 +12,7 @@ namespace FluentXamarinForms
         }
     }
 
-    public class FluentApplication : FluentElement<CreateableApplication>
+    public class FluentApplication : FluentElement<FluentApplication, CreateableApplication>
     {
         public FluentApplication MainPage (Page page)
         {

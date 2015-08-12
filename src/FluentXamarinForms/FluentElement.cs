@@ -3,28 +3,37 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public abstract class FluentElement<TElement> : FluentBindableObject<TElement>
-        where TElement : Element, new()
+    public abstract class FluentElement<TFluent, T> : FluentBindableObject<TFluent, T>
+        where TFluent: FluentBase<T>
+        where T : Element, new()
     {
-        public TElement ClassId(string classId)
+        public FluentElement ()
+            :base()
+        {}
+
+        public FluentElement (T instance)
+            :base(instance)
+        {}
+
+        public TFluent ClassId(string classId)
         {
             this.BuilderActions.Add (element => element.ClassId = classId);
 
-            return this as TElement;
+            return this as TFluent;
         }
 
-        public TElement Parent(Element parent)
+        public TFluent Parent(Element parent)
         {
             this.BuilderActions.Add (element => element.Parent = parent);
 
-            return this as TElement;
+            return this as TFluent;
         }
 
-        public TElement StyleId(string styleId)
+        public TFluent StyleId(string styleId)
         {
             this.BuilderActions.Add (element => element.StyleId = styleId);
 
-            return this as TElement;
+            return this as TFluent;
         }
     }
 }

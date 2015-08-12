@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace FluentXamarinForms
 {
-    public class FluentButton : FluentView<Button>
+    public class FluentButton : FluentView<FluentButton, Button>
     {
         public FluentButton BorderColor (Color color)
         {

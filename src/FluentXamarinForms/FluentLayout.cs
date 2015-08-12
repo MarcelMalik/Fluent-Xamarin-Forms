@@ -3,50 +3,72 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public class FluentLayout<TLayout> : FluentView<TLayout>
-        where TLayout: Layout, new()
+    public class FluentLayout<TFluent, T> : FluentView<TFluent, T>
+        where TFluent: FluentBase<T>
+        where T: Layout, new()
     {
-        public TLayout IsClippedToBounds (bool isClippedToBounds)
+        public FluentLayout ()
+            : base ()
+        {
+        }
+
+        public FluentLayout (T instance)
+            : base (instance)
+        {
+        }
+
+        public TFluent IsClippedToBounds (bool isClippedToBounds)
         {
             this.BuilderActions.Add (layout => layout.IsClippedToBounds = isClippedToBounds);
 
-            return this as TLayout;
+            return this as TFluent;
         }
 
-        public TLayout Padding (Thickness padding)
+        public TFluent Padding (Thickness padding)
         {
             this.BuilderActions.Add (layout => layout.Padding = padding);
 
-            return this as TLayout;
+            return this as TFluent;
         }
     }
 
-    public class FluentLayout<TLayout, TChild> : FluentLayout<TLayout>
-        where TLayout: Layout<TChild>, new()
+    public class FluentLayout<TFluent, T, TChild> : FluentLayout<TFluent, T>
+        where TFluent: FluentBase<T>
+        where T: Layout<TChild>, new()
         where TChild : View//, new()
     {
-        public TLayout AddChild (TChild child)
+        public FluentLayout ()
+            : base ()
         {
-            this.BuilderActions.Add (layout => layout.Children.Add (child));
-
-            return this as TLayout;
         }
 
-        public TLayout RemoveChild (TChild child)
+        public FluentLayout (T instance)
+            : base (instance)
         {
-            this.BuilderActions.Add (layout => layout.Children.Remove (child));
-
-            return this as TLayout;
         }
 
-        /*public FluentLayout<TLayout, TChild> AddChild (FluentView<TChild> fluentChild)
+        public TFluent AddChild (TChild view)
+        {
+            this.BuilderActions.Add (layout => layout.Children.Add (view));
+
+            return this as TFluent;
+        }
+
+        public TFluent RemoveChild (TChild view)
+        {
+            this.BuilderActions.Add (layout => layout.Children.Remove (view));
+
+            return this as TFluent;
+        }
+
+        /*public TFluent AddChild (FluentView<TFluent, T> fluentChild)
         {
             this.BuilderActions.Add (layout => {
                 var view = fluentChild.Build();
                 layout.Children.Add(view);
             });
 
-            return this;
+            return this as TFluent;
         }*/
     }
 }
