@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle ("FluentXamarinForms")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("Fluent API for Xamarin.Forms")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("einmalik")]
-[assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("Marcel Malik")]
+[assembly: AssemblyCompany ("Marcel E. Malik")]
+[assembly: AssemblyProduct ("FluentXamarinForms")]
+[assembly: AssemblyCopyright ("Marcel E. Malik")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
