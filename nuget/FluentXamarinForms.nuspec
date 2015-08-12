@@ -17,7 +17,7 @@
         <tags>fluent interface xamarin.forms xamarin forms ios android windowsphone windows xamarin monotouch monodroid</tags>
     </metadata>
     <dependencies>
-        <dependency id="Xamarin.Forms" version="1.4.0" />
+        <dependency id="Xamarin.Forms" version="1.4.4.6392" />
     </dependencies>
     <files>
         <file src="..\src\FluentXamarinForms\bin\Release\FluentXamarinForms.dll" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FluentXamarinForms.dll" />
