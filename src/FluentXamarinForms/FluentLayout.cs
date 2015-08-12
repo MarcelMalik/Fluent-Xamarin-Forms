@@ -6,18 +6,18 @@ namespace FluentXamarinForms
     public class FluentLayout<TLayout> : FluentView<TLayout>
         where TLayout: Layout, new()
     {
-        public FluentLayout<TLayout> IsClippedToBounds (bool isClippedToBounds)
+        public TLayout IsClippedToBounds (bool isClippedToBounds)
         {
             this.BuilderActions.Add (layout => layout.IsClippedToBounds = isClippedToBounds);
 
-            return this;
+            return this as TLayout;
         }
 
-        public FluentLayout<TLayout> Padding (Thickness padding)
+        public TLayout Padding (Thickness padding)
         {
             this.BuilderActions.Add (layout => layout.Padding = padding);
 
-            return this;
+            return this as TLayout;
         }
     }
 
@@ -25,18 +25,18 @@ namespace FluentXamarinForms
         where TLayout: Layout<TChild>, new()
         where TChild : View//, new()
     {
-        public FluentLayout<TLayout, TChild> AddChild (TChild child)
+        public TLayout AddChild (TChild child)
         {
             this.BuilderActions.Add (layout => layout.Children.Add (child));
 
-            return this;
+            return this as TLayout;
         }
 
-        public FluentLayout<TLayout, TChild> RemoveChild (TChild child)
+        public TLayout RemoveChild (TChild child)
         {
             this.BuilderActions.Add (layout => layout.Children.Remove (child));
 
-            return this;
+            return this as TLayout;
         }
 
         /*public FluentLayout<TLayout, TChild> AddChild (FluentView<TChild> fluentChild)

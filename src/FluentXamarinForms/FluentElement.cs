@@ -6,25 +6,25 @@ namespace FluentXamarinForms
     public abstract class FluentElement<TElement> : FluentBindableObject<TElement>
         where TElement : Element, new()
     {
-        public FluentElement<TElement> ClassId(string classId)
+        public TElement ClassId(string classId)
         {
             this.BuilderActions.Add (element => element.ClassId = classId);
 
-            return this;
+            return this as TElement;
         }
 
-        public FluentElement<TElement> Parent(Element parent)
+        public TElement Parent(Element parent)
         {
             this.BuilderActions.Add (element => element.Parent = parent);
 
-            return this;
+            return this as TElement;
         }
 
-        public FluentElement<TElement> StyleId(string styleId)
+        public TElement StyleId(string styleId)
         {
             this.BuilderActions.Add (element => element.StyleId = styleId);
 
-            return this;
+            return this as TElement;
         }
     }
 }

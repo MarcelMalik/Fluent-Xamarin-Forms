@@ -6,11 +6,11 @@ namespace FluentXamarinForms
     public abstract class FluentBindableObject<TBindableObject> : FluentBase<TBindableObject> 
         where TBindableObject : BindableObject, new()
     {
-        public FluentBindableObject<TBindableObject> BindingContext(object context)
+        public TBindableObject BindingContext(object context)
         {
             this.BuilderActions.Add (bindableObj => bindableObj.BindingContext = context);
 
-            return this;
+            return this as TBindableObject;
         }
     }
 }

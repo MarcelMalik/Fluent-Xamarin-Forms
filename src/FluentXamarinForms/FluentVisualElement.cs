@@ -6,179 +6,179 @@ namespace FluentXamarinForms
     public abstract class FluentVisualElement<TVisualElement> : FluentElement<TVisualElement>
         where TVisualElement : VisualElement, new()
     {
-        public FluentVisualElement<TVisualElement> AnchorX(double value)
+        public TVisualElement AnchorX(double value)
         {
             this.BuilderActions.Add (visualElement => visualElement.AnchorX = value);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> AnchorY(double value)
+        public TVisualElement AnchorY(double value)
         {
             this.BuilderActions.Add (visualElement => visualElement.AnchorY = value);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> BackgroundColor(Color color)
+        public TVisualElement BackgroundColor(Color color)
         {
             this.BuilderActions.Add (visualElement => visualElement.BackgroundColor = color);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> AddBehavior(Behavior behavior)
+        public TVisualElement AddBehavior(Behavior behavior)
         {
             this.BuilderActions.Add (visualElement => visualElement.Behaviors.Add (behavior));
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> RemoveBehavior(Behavior behavior)
+        public TVisualElement RemoveBehavior(Behavior behavior)
         {
             this.BuilderActions.Add (visualElement => visualElement.Behaviors.Remove (behavior));
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> HeightRequest(double height)
+        public TVisualElement HeightRequest(double height)
         {
             this.BuilderActions.Add (visualElement => visualElement.HeightRequest = height);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> InputTransparent(bool transparent)
+        public TVisualElement InputTransparent(bool transparent)
         {
             this.BuilderActions.Add (visualElement => visualElement.InputTransparent = transparent);
 
-            return this;
+            return this as TVisualElement;
         }
     
-        public FluentVisualElement<TVisualElement> IsEnabled(bool enabled)
+        public TVisualElement IsEnabled(bool enabled)
         {
             this.BuilderActions.Add (visualElement => visualElement.IsEnabled = enabled);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> IsVisible(bool visible)
+        public TVisualElement IsVisible(bool visible)
         {
             this.BuilderActions.Add (visualElement => visualElement.IsVisible = visible);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> MinimumHeightRequest(double minimumHeight)
+        public TVisualElement MinimumHeightRequest(double minimumHeight)
         {
             this.BuilderActions.Add (visualElement => visualElement.MinimumHeightRequest = minimumHeight);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> MinimumWidthRequest(double minimumWidth)
+        public TVisualElement MinimumWidthRequest(double minimumWidth)
         {
             this.BuilderActions.Add (visualElement => visualElement.MinimumWidthRequest = minimumWidth);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> Opacity(double opacity)
+        public TVisualElement Opacity(double opacity)
         {
             this.BuilderActions.Add (visualElement => visualElement.Opacity = opacity);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> Resources(ResourceDictionary resourceDictionary)
+        public TVisualElement Resources(ResourceDictionary resourceDictionary)
         {
             this.BuilderActions.Add (visualElement => visualElement.Resources = resourceDictionary);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> AddResource(Style implicitStyle)
+        public TVisualElement AddResource(Style implicitStyle)
         {
             this.BuilderActions.Add (visualElement => visualElement.Resources.Add(implicitStyle));
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> RemoveResource(string implicitStyleName)
+        public TVisualElement RemoveResource(string implicitStyleName)
         {
             this.BuilderActions.Add (visualElement => visualElement.Resources.Remove(implicitStyleName));
 
-            return this;
+            return this as TVisualElement;
         }
     
-        public FluentVisualElement<TVisualElement> Rotation(double rotation)
+        public TVisualElement Rotation(double rotation)
         {
             this.BuilderActions.Add (visualElement => visualElement.Rotation = rotation);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> RotationX(double rotation)
+        public TVisualElement RotationX(double rotation)
         {
             this.BuilderActions.Add (visualElement => visualElement.RotationX = rotation);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> RotationY(double rotation)
+        public TVisualElement RotationY(double rotation)
         {
             this.BuilderActions.Add (visualElement => visualElement.RotationY = rotation);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> Scale(double scale)
+        public TVisualElement Scale(double scale)
         {
             this.BuilderActions.Add (visualElement => visualElement.Scale = scale);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> Style(Style style)
+        public TVisualElement Style(Style style)
         {
             this.BuilderActions.Add (visualElement => visualElement.Style = style);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> TranslationX(double translation)
+        public TVisualElement TranslationX(double translation)
         {
             this.BuilderActions.Add (visualElement => visualElement.TranslationX = translation);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> TranslationY(double translation)
+        public TVisualElement TranslationY(double translation)
         {
             this.BuilderActions.Add (visualElement => visualElement.TranslationY = translation);
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> AddTrigger(TriggerBase trigger)
+        public TVisualElement AddTrigger(TriggerBase trigger)
         {
             this.BuilderActions.Add (visualElement => visualElement.Triggers.Add(trigger));
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> RemoveTrigger(TriggerBase trigger)
+        public TVisualElement RemoveTrigger(TriggerBase trigger)
         {
             this.BuilderActions.Add (visualElement => visualElement.Triggers.Remove(trigger));
 
-            return this;
+            return this as TVisualElement;
         }
 
-        public FluentVisualElement<TVisualElement> WidthRequest(double width)
+        public TVisualElement WidthRequest(double width)
         {
             this.BuilderActions.Add (visualElement => visualElement.WidthRequest = width);
 
-            return this;
+            return this as TVisualElement;
         }
     }
 }
