@@ -94,6 +94,14 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindTitle (string path)
+        {
+            this.BuilderActions.Add (page => {
+                    page.SetBinding (Page.TitleProperty, new Binding (path));
+                });
+            return this as TFluent;
+        }
+
         public TFluent AddToolbarItem (ToolbarItem item)
         {
             this.BuilderActions.Add (page => page.ToolbarItems.Add (item));
