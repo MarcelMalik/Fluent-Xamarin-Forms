@@ -57,7 +57,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent Padding (int left = 1, int top = 1, int right = 1, int bottom = 1)
+        public TFluent Padding (double left = 1, double top = 1, double right = 1, double bottom = 1)
         {
             this.BuilderActions.Add (page => {
                     page.Padding = FluentPadding.Padding (left, top, right, bottom);
@@ -66,7 +66,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent Padding (int horizontalSize = 1, int verticalSize = 1)
+        public TFluent Padding (double horizontalSize = 1, double verticalSize = 1)
         {
             this.BuilderActions.Add (page => {
                     page.Padding = FluentPadding.Padding (horizontalSize, verticalSize);
@@ -75,7 +75,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent Padding (int uniformSize = 1)
+        public TFluent Padding (double uniformSize = 1)
         {
             this.BuilderActions.Add (page => {
                     page.Padding = FluentPadding.Padding (uniformSize);

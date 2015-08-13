@@ -9,7 +9,7 @@ namespace FluentXamarinForms
     /// </summary>
     public static class FluentPadding
     {
-        public static Thickness Padding (int left = 1, int top = 1, int right = 1, int bottom = 1)
+        public static Thickness Padding (double left = 1, double top = 1, double right = 1, double bottom = 1)
         {
             return new Thickness (
                 left * FluentSettings.PaddingMultiplier,
@@ -19,12 +19,12 @@ namespace FluentXamarinForms
             );
         }
 
-        public static Thickness Padding (int horizontalSize = 1, int verticalSize = 1)
+        public static Thickness Padding (double horizontalSize = 1, double verticalSize = 1)
         {
             return new Thickness (horizontalSize * FluentSettings.PaddingMultiplier, verticalSize * FluentSettings.PaddingMultiplier);
         }
 
-        public static Thickness Padding (int uniformSize = 1)
+        public static Thickness Padding (double uniformSize = 1)
         {
             return new Thickness (uniformSize * FluentSettings.PaddingMultiplier);
         }
