@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentStackLayoutBase<TFluent, T> : FluentView<TFluent, T>
+    public abstract class FluentStackLayoutBase<TFluent, T> : FluentLayout<TFluent, T, View>
         where TFluent: FluentBase<T>
         where T: StackLayout, new()
     {

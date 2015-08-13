@@ -29,7 +29,6 @@ namespace FluentXamarinForms.FluentBase
                 });
         }
 
-
         public TFluent BackgroundImage (string source)
         {
             this.BuilderActions.Add (page => page.BackgroundImage = source);

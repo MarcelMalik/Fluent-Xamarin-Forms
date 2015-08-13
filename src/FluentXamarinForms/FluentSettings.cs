@@ -18,6 +18,6 @@ namespace FluentXamarinForms
         /// Idea by Adam J Wolf
         /// Source: https://www.syntaxismyui.com/xamarin-forms-nugget-paddington/
         /// </summary>
-        public static double PaddingMultiplier = 1;
+        public static double PaddingMultiplier { get; set; } = 1;
     }
 }

@@ -31,8 +31,7 @@ namespace FluentXamarinForms.FluentBase
         }
 
         //TODO: AddChild with int left, int right, int top, int bottom ?
-        public TFluent AddChild (View view, int column = 0, int row = 0, 
-                                 int columnspan = 1, int rowspan = 1)
+        public TFluent AddChild (View view, int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
         {
             if (view == null)
                 throw new ArgumentNullException ("view");
