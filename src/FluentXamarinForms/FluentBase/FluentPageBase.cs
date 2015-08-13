@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
@@ -93,11 +94,22 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent BindTitle (string path)
+        public TFluent BindTitle (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
         {
             this.BuilderActions.Add (page => {
-                    page.SetBinding (Page.TitleProperty, new Binding (path));
+                    page.SetBinding (Page.TitleProperty, path, mode, converter, stringFormat);
                 });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindTitle<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+                                           BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (page => {
+                    page.SetBinding<TSource> (Page.TitleProperty, sourceProperty, mode, converter, stringFormat);
+                });
+
             return this as TFluent;
         }
 

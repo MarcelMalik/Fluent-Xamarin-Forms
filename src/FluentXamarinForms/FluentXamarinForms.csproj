@@ -71,6 +71,25 @@
     <Compile Include="FluentBase\FluentContentPageBase.cs" />
     <Compile Include="FluentContentPage.cs" />
     <Compile Include="LabelAlignmentExtensions.cs" />
+    <Compile Include="FluentBase\FluentBaseMenuItem.cs" />
+    <Compile Include="FluentBase\FluentMultiPage.cs" />
+    <Compile Include="FluentBase\FluentCarouselPageBase.cs" />
+    <Compile Include="FluentCell.cs" />
+    <Compile Include="FluentBase\FluentDatePickerBase.cs" />
+    <Compile Include="FluentDatePicker.cs" />
+    <Compile Include="FluentBase\FluentCellBase.cs" />
+    <Compile Include="FluentBase\FluentInputViewBase.cs" />
+    <Compile Include="FluentBase\FluentEditorBase.cs" />
+    <Compile Include="FluentEditor.cs" />
+    <Compile Include="FluentBase\FluentEntryBase.cs" />
+    <Compile Include="FluentEntry.cs" />
+    <Compile Include="FluentBase\FluentEntryCellBase.cs" />
+    <Compile Include="FluentEntryCell.cs" />
+    <Compile Include="FluentBase\FluentFrameBase.cs" />
+    <Compile Include="FluentFrame.cs" />
+    <Compile Include="FluentBase\FluentImageCellBase.cs" />
+    <Compile Include="FluentTextCell.cs" />
+    <Compile Include="FluentBase\FluentTextCellBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

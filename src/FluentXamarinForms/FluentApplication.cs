@@ -5,17 +5,20 @@ using FluentXamarinForms.FluentBase;
 
 namespace FluentXamarinForms
 {
-    public class CreateableApplication : Application 
+    public class FluentApplication<T> : FluentElement<FluentApplication<T>, T>
+        where T : Application, new()
     {
-        public CreateableApplication ()
-            :base()
+        public FluentApplication ()
+            : base ()
         {
         }
-    }
 
-    public class FluentApplication : FluentElement<FluentApplication, CreateableApplication>
-    {
-        public FluentApplication MainPage (Page page)
+        public FluentApplication (T instance)
+            : base (instance)
+        {
+        }
+
+        public FluentApplication<T> MainPage (Page page)
         {
             this.BuilderActions.Add (app => {
                     app.MainPage = page;
@@ -24,7 +27,7 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentApplication AddProperty (KeyValuePair<string, object> item)
+        public FluentApplication<T> AddProperty (KeyValuePair<string, object> item)
         {
             this.BuilderActions.Add (app => {
                     app.Properties.Add (item);
@@ -33,7 +36,7 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentApplication AddProperty (string key, object value)
+        public FluentApplication<T> AddProperty (string key, object value)
         {
             this.BuilderActions.Add (app => {
                     app.Properties.Add (key, value);
@@ -42,7 +45,7 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentApplication RemoveProperty (KeyValuePair<string, object> item)
+        public FluentApplication<T> RemoveProperty (KeyValuePair<string, object> item)
         {
             this.BuilderActions.Add (app => {
                     app.Properties.Remove (item);
@@ -51,7 +54,7 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentApplication RemoveProperty (string key)
+        public FluentApplication<T> RemoveProperty (string key)
         {
             this.BuilderActions.Add (app => {
                     app.Properties.Remove (key);
@@ -60,23 +63,23 @@ namespace FluentXamarinForms
             return this;
         }
 
-        public FluentApplication Resources(ResourceDictionary resourceDictionary)
+        public FluentApplication<T> Resources (ResourceDictionary resourceDictionary)
         {
             this.BuilderActions.Add (app => app.Resources = resourceDictionary);
 
             return this;
         }
 
-        public FluentApplication AddResource(Style implicitStyle)
+        public FluentApplication<T> AddResource (Style implicitStyle)
         {
-            this.BuilderActions.Add (app => app.Resources.Add(implicitStyle));
+            this.BuilderActions.Add (app => app.Resources.Add (implicitStyle));
 
             return this;
         }
 
-        public FluentApplication RemoveResource(string implicitStyleName)
+        public FluentApplication<T> RemoveResource (string implicitStyleName)
         {
-            this.BuilderActions.Add (app => app.Resources.Remove(implicitStyleName));
+            this.BuilderActions.Add (app => app.Resources.Remove (implicitStyleName));
 
             return this;
         }
