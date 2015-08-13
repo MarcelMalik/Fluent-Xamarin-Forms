@@ -26,6 +26,18 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindItemSource (string path, BindingMode mode = BindingMode.Default, 
+                                       IValueConverter converter = null, object converterParameter = null, 
+                                       string stringFormat = null, object source = null)
+        {
+            this.BuilderActions.Add (itemsView => {
+                    itemsView.SetBinding (ItemsView<TChild>.ItemsSourceProperty, 
+                        new Binding (path, mode, converter, converterParameter, stringFormat, source));
+                });
+
+            return this as TFluent;
+        }
+
         public TFluent ItemTemplate (DataTemplate itemTemplate)
         {
             this.BuilderActions.Add (itemsView => itemsView.ItemTemplate = itemTemplate);

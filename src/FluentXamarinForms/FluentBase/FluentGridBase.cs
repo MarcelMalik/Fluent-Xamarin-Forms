@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using FluentXamarinForms.Extensions;
 
 namespace FluentXamarinForms.FluentBase
 {
@@ -22,12 +23,12 @@ namespace FluentXamarinForms.FluentBase
             base.ResetStyles ();
 
             this.BuilderActions.Add (grid => {
-                if (FluentSettings.StyleReset)
-                {
-                    grid.RowSpacing = 0;
-                    grid.ColumnSpacing = 0;
-                }
-            });
+                    if (FluentSettings.StyleReset)
+                    {
+                        grid.RowSpacing = 0;
+                        grid.ColumnSpacing = 0;
+                    }
+                });
         }
 
         //TODO: AddChild with int left, int right, int top, int bottom ?
@@ -56,10 +57,9 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        // TODO
-        /*public TFluent AddChild<TChild> (FluentView<FluentGrid, TChild> fluentView, 
-                                            int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
-            where TChild : View, new()
+        public TFluent AddChild<TFluent2, T2> (FluentView<TFluent2, T2> fluentView, int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
+            where TFluent2: FluentBase<T2>
+            where T2: View, new()
         {
             if (fluentView == null)
                 throw new ArgumentNullException ("view");
@@ -74,6 +74,7 @@ namespace FluentXamarinForms.FluentBase
 
             this.BuilderActions.Add (grid => {
                     var view = fluentView.Build ();
+
                     Grid.SetRow ((BindableObject)view, row);
                     Grid.SetRowSpan ((BindableObject)view, rowspan);
                     Grid.SetColumn ((BindableObject)view, column);
@@ -83,51 +84,64 @@ namespace FluentXamarinForms.FluentBase
                 });
 
             return this as TFluent;
-        }*/
+        }
 
-        public TFluent AddChildHorizontal (T view)
+        public TFluent AddChildHorizontal (View view)
         {
-            this.BuilderActions.Add (grid => grid.Children.AddHorizontal (view));
+            this.BuilderActions.Add (grid => {
+                    grid.Children.AddHorizontal (view);
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent AddChildHorizontal<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+            where TFluent2: FluentBase<T2>
+            where T2: View, new()
+        {
+            this.BuilderActions.Add (grid => {
+                    grid.Children.AddHorizontal (fluentView.Build ());
+                });
 
             return this as TFluent;
         }
 
         public TFluent AddChildHorizontal (IEnumerable<View> views)
         {
-            this.BuilderActions.Add (grid => grid.Children.AddHorizontal (views));
+            this.BuilderActions.Add (grid => {
+                    grid.Children.AddHorizontal (views);
+                });
 
             return this as TFluent;
         }
 
-        // TODO
-        /*public FluentGrid AddChildHorizontal<TChild>(FluentView<FluentGrid, TChild> fluentview)
-            where TChild : View, new()
+        public TFluent AddChildHorizontal<TFluent2, T2> (IEnumerable<FluentView<TFluent2, T2>> fluentViews)
+            where TFluent2: FluentBase<T2>
+            where T2: View, new()
         {
             this.BuilderActions.Add (grid => {
-                var child = fluentview.Build();
-                grid.Children.AddHorizontal (child);
-            });
-
-            return this;
-        }*/
-
-        // TODO
-        /*public FluentGrid AddChildHorizontal<TChild> (IEnumerable<FluentView<FluentGrid, TChild>> fluentViews)
-            where TChild : View, new()
-        {
-            this.BuilderActions.Add (grid => {
-                fluentViews.ForEach((fluentView) => {
-                    var view = fluentView.Build();
-                    grid.Children.AddHorizontal(view);
+                    fluentViews.ForEach ((fluentView) => {
+                            grid.Children.AddHorizontal (fluentView.Build ());
+                        });
                 });
-            });
 
-            return this;
-        }*/
+            return this as TFluent;
+        }
 
         public TFluent AddChildVertical (View view)
         {
             this.BuilderActions.Add (grid => grid.Children.AddVertical (view));
+
+            return this as TFluent;
+        }
+
+        public TFluent AddChildVertical<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+            where TFluent2: FluentBase<T2>
+            where T2: View, new()
+        {
+            this.BuilderActions.Add (grid => {
+                    grid.Children.AddVertical (fluentView.Build ());
+                });
 
             return this as TFluent;
         }
@@ -139,32 +153,18 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        // TODO
-        /*public TFluent AddChildVertical<TChild>(FluentView<FluentGrid, TChild> fluentChild)
-            where TChild : View, new()
+        public TFluent AddChildVertical<TFluent2, T2> (IEnumerable<FluentView<TFluent2, T2>> fluentViews)
+            where TFluent2: FluentBase<T2>
+            where T2: View, new()
         {
             this.BuilderActions.Add (grid => {
-                var child = fluentChild.Build();
-                grid.Children.AddVertical (child);
-            });
-
-            return this as TFluent;
-        }*/
-
-        // TODO
-        /*public TFluent AddChildVertical<TChild> (IEnumerable<FluentView<FluentGrid, TChild>> fluentChilds)
-            where TChild : View, new()
-        {
-            this.BuilderActions.Add (grid => {
-                fluentChilds.ForEach((fluentChild) => {
-                    var child = fluentChild.Build();
-                    grid.Children.AddVertical(child);
+                    fluentViews.ForEach ((fluentView) => {
+                            grid.Children.AddVertical (fluentView.Build ());
+                        });
                 });
-            });
 
             return this as TFluent;
-        }*/
-
+        }
 
         public TFluent ColumnDefinition (double value)
         {

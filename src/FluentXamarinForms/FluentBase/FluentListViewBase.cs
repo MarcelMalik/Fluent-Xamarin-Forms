@@ -34,7 +34,21 @@ namespace FluentXamarinForms.FluentBase
 
         public TFluent GroupDisplayBinding (BindingBase binding)
         {
-            this.BuilderActions.Add (itemsView => itemsView.GroupDisplayBinding = binding);
+            this.BuilderActions.Add (itemsView => {
+                    itemsView.GroupDisplayBinding = binding;
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent GroupDisplayBinding (string path, BindingMode mode = BindingMode.Default, 
+                                            IValueConverter converter = null, object converterParameter = null, 
+                                            string stringFormat = null, object source = null)
+        {
+            this.BuilderActions.Add (itemsView => {
+                    itemsView.GroupDisplayBinding = new Binding (path, mode, 
+                        converter, converterParameter, stringFormat, source);
+                });
 
             return this as TFluent;
         }
@@ -48,7 +62,21 @@ namespace FluentXamarinForms.FluentBase
 
         public TFluent GroupShortNameBinding (BindingBase binding)
         {
-            this.BuilderActions.Add (itemsView => itemsView.GroupShortNameBinding = binding);
+            this.BuilderActions.Add (itemsView => {
+                    itemsView.GroupShortNameBinding = binding;
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent GroupShortNameBinding (string path, BindingMode mode = BindingMode.Default, 
+                                              IValueConverter converter = null, object converterParameter = null, 
+                                              string stringFormat = null, object source = null)
+        {
+            this.BuilderActions.Add (itemsView => {
+                    itemsView.GroupShortNameBinding = new Binding (path, mode, 
+                        converter, converterParameter, stringFormat, source);
+                });
 
             return this as TFluent;
         }
