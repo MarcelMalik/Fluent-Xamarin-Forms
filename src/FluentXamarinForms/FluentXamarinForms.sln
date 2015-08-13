@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentXamarinForms", "FluentXamarinForms.csproj", "{C1B6E061-091C-420B-BA33-39C7CD2E019B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluent Xamarin Forms", "Fluent Xamarin Forms.csproj", "{C1B6E061-091C-420B-BA33-39C7CD2E019B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
