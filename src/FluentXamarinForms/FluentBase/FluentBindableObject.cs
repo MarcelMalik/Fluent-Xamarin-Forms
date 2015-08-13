@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using System.Linq.Expressions;
 
-namespace FluentXamarinForms
+namespace FluentXamarinForms.FluentBase
 {
     public abstract class FluentBindableObject<TFluent, T> : FluentBase<T> 
         where TFluent : FluentBase<T>

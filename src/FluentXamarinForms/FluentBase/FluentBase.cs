@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using FluentXamarinForms.Extensions;
 
-namespace FluentXamarinForms
+namespace FluentXamarinForms.FluentBase
 {
-    public interface IFluentBase
-    {
-        
-    }
-
-    public abstract class FluentBase<T> : IFluentBase
+    public abstract class FluentBase<T>
         where T: new()
     {
         private readonly T instance;
@@ -16,6 +12,7 @@ namespace FluentXamarinForms
         public FluentBase ()
         {
             this.BuilderActions = new List<Action<T>> ();
+            this.ResetStyles ();
         }
 
         public FluentBase(T instance)
@@ -25,6 +22,10 @@ namespace FluentXamarinForms
         }
 
         protected List<Action<T>> BuilderActions { get; }
+
+        protected virtual void ResetStyles()
+        {
+        }
 
         public virtual T Build ()
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using FluentXamarinForms.FluentBase;
 
 namespace FluentXamarinForms
 {

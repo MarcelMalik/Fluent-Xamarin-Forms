@@ -1,42 +1,19 @@
 ﻿using System;
 using Xamarin.Forms;
+using FluentXamarinForms.FluentBase;
 
 namespace FluentXamarinForms
 {
-    public abstract class FluentContentViewBase<TFluent, T> : FluentLayout<TFluent, T>
-        where TFluent: FluentBase<T>
-        where T: ContentView, new()
+    public class FluentContentView : FluentContentViewBase<FluentContentView, ContentView>
     {
-        public FluentContentViewBase ()
+        public FluentContentView ()
+            : base ()
         {
         }
 
-        public FluentContentViewBase (T instance)
+        public FluentContentView (ContentView instance)
             : base (instance)
         {
         }
-
-        public TFluent Content (View view)
-        {
-            this.BuilderActions.Add (contentView => contentView.Content = view);
-
-            return this as TFluent;
-        }
-
-        /*public TFluent Content<TFluentOther, TOther> (FluentView<TFluentOther, TOther> fluentView)
-            where TFluentOther: FluentBase<TOther>
-            where TOther: View, new()
-        {
-            this.BuilderActions.Add (contentView => {
-                    var view = fluentView.Build ();
-                    contentView.Content = view; 
-                });
-
-            return this as TFluent;
-        }*/
-    }
-
-    public class FluentContentView : FluentContentViewBase<FluentContentView, ContentView>
-    {
     }
 }

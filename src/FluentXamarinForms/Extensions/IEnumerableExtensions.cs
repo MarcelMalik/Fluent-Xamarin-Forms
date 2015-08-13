@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FluentXamarinForms
+namespace FluentXamarinForms.Extensions
 {
     public static class IEnumerableExtensions
     {

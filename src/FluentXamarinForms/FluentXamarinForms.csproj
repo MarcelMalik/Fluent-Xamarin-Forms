@@ -10,6 +10,8 @@
     <AssemblyName>FluentXamarinForms</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,24 +34,42 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FluentGrid.cs" />
-    <Compile Include="IEnumerableExtensions.cs" />
     <Compile Include="FluentLabel.cs" />
-    <Compile Include="FluentBase.cs" />
     <Compile Include="FluentStackLayout.cs" />
-    <Compile Include="FluentView.cs" />
-    <Compile Include="FluentVisualElement.cs" />
-    <Compile Include="FluentElement.cs" />
-    <Compile Include="FluentLayout.cs" />
     <Compile Include="FluentAbsoluteLayout.cs" />
     <Compile Include="FluentActivityIndicator.cs" />
     <Compile Include="FluentApplication.cs" />
-    <Compile Include="FluentBindableObject.cs" />
     <Compile Include="FluentBoxView.cs" />
     <Compile Include="FluentButton.cs" />
     <Compile Include="FluentCarouselPage.cs" />
     <Compile Include="FluentImage.cs" />
     <Compile Include="FluentContentView.cs" />
     <Compile Include="FluentListView.cs" />
+    <Compile Include="FluentSettings.cs" />
+    <Compile Include="Xinions.cs" />
+    <Compile Include="FluentBase\FluentActivityIndicatorBase.cs" />
+    <Compile Include="FluentBase\FluentAbsoluteLayoutBase.cs" />
+    <Compile Include="FluentBase\FluentBase.cs" />
+    <Compile Include="FluentBase\FluentGridBase.cs" />
+    <Compile Include="FluentBase\FluentLabelBase.cs" />
+    <Compile Include="FluentBase\FluentListViewBase.cs" />
+    <Compile Include="FluentBase\FluentStackLayoutBase.cs" />
+    <Compile Include="FluentBase\FluentView.cs" />
+    <Compile Include="FluentBase\FluentVisualElement.cs" />
+    <Compile Include="FluentBase\FluentElement.cs" />
+    <Compile Include="FluentBase\FluentLayout.cs" />
+    <Compile Include="FluentBase\FluentBindableObject.cs" />
+    <Compile Include="FluentBase\FluentBoxViewBase.cs" />
+    <Compile Include="FluentBase\FluentButtonBase.cs" />
+    <Compile Include="FluentBase\FluentImageBase.cs" />
+    <Compile Include="FluentBase\FluentContentViewBase.cs" />
+    <Compile Include="FluentBase\FluentItemsView.cs" />
+    <Compile Include="FluentPage.cs" />
+    <Compile Include="FluentBase\FluentPageBase.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
+    <Compile Include="FluentPadding.cs" />
+    <Compile Include="FluentBase\FluentContentPageBase.cs" />
+    <Compile Include="FluentContentPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -67,5 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FluentBase\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FluentXamarinForms
+namespace FluentXamarinForms.FluentBase
 {
     public abstract class FluentElement<TFluent, T> : FluentBindableObject<TFluent, T>
         where TFluent: FluentBase<T>

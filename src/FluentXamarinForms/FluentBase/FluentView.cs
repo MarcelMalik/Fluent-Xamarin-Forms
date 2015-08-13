@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace FluentXamarinForms
+namespace FluentXamarinForms.FluentBase
 {
     public abstract class FluentView<TFluent, T> : FluentVisualElement<TFluent, T>
         where TFluent: FluentBase<T>
