@@ -21,7 +21,6 @@ namespace FluentXamarinForms.FluentBase
             this.instance = instance;
         }
 
-
         protected List<Action<T>> BuilderActions { get; }
 
         protected virtual void ResetStyles()
@@ -34,7 +33,8 @@ namespace FluentXamarinForms.FluentBase
             if (result == null)
                 result = new T ();
 
-            this.BuilderActions.ForEach (action => action (result));
+            this.BuilderActions
+                .ForEach (action => action (result));
 
             return result;
         }

@@ -115,14 +115,30 @@ namespace FluentXamarinForms.FluentBase
 
         public TFluent AddToolbarItem (ToolbarItem item)
         {
-            this.BuilderActions.Add (page => page.ToolbarItems.Add (item));
+            this.BuilderActions.Add (page => {
+                    page.ToolbarItems.Add (item);
+                });
         
+            return this as TFluent;
+        }
+
+        public TFluent AddToolbarItem<TFluent2, T2> (FluentToolbarItemBase<TFluent2, T2> fluentItem)
+            where TFluent2: FluentBase<T2>
+            where T2: ToolbarItem, new()
+        {
+            this.BuilderActions.Add (page => {
+                    var item = fluentItem.Build ();
+                    page.ToolbarItems.Add (item);
+                });
+
             return this as TFluent;
         }
 
         public TFluent RemoveToolbarItem (ToolbarItem item)
         {
-            this.BuilderActions.Add (page => page.ToolbarItems.Remove (item));
+            this.BuilderActions.Add (page => {
+                    page.ToolbarItems.Remove (item);
+                });
         
             return this as TFluent;
         }
