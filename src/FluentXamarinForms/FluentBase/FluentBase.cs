@@ -21,6 +21,7 @@ namespace FluentXamarinForms.FluentBase
             this.instance = instance;
         }
 
+
         protected List<Action<T>> BuilderActions { get; }
 
         protected virtual void ResetStyles()
