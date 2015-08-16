@@ -4,16 +4,16 @@ using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentBindableObject<TFluent, T> : FluentBase<T> 
+    public abstract class FluentBindableObjectBase<TFluent, T> : FluentBase<T> 
         where TFluent : FluentBase<T>
         where T : BindableObject, new()
     {
-        public FluentBindableObject ()
+        public FluentBindableObjectBase ()
             : base ()
         {
         }
 
-        public FluentBindableObject (T instance)
+        public FluentBindableObjectBase (T instance)
             : base (instance)
         {
         }

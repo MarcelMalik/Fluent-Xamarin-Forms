@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentPageBase<TFluent, T> : FluentVisualElement<TFluent, T>
+    public abstract class FluentPageBase<TFluent, T> : FluentVisualElementBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: Page, new()
     {

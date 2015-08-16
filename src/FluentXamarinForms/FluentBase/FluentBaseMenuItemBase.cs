@@ -3,16 +3,16 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentBaseMenuItem<TFluent, T> : FluentElement<TFluent, T>
+    public abstract class FluentBaseMenuItemBase<TFluent, T> : FluentElementBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T : BaseMenuItem, new()
     {
-        public FluentBaseMenuItem ()
+        public FluentBaseMenuItemBase ()
             :base()
         {
         }
 
-        public FluentBaseMenuItem (T instance)
+        public FluentBaseMenuItemBase (T instance)
             :base(instance)
         {
         }

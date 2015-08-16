@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentActivityIndicatorBase<TFluent, T> : FluentView<TFluent, T>
+    public abstract class FluentActivityIndicatorBase<TFluent, T> : FluentViewBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: ActivityIndicator, new()
     {

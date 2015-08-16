@@ -4,17 +4,17 @@ using System.Collections;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentItemsView<TFluent, T, TChild> : FluentView<TFluent, T>
+    public abstract class FluentItemsViewBase<TFluent, T, TChild> : FluentViewBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: ItemsView<TChild>, new()
         where TChild : BindableObject
     {
-        public FluentItemsView ()
+        public FluentItemsViewBase ()
             : base ()
         {
         }
 
-        public FluentItemsView (T instance)
+        public FluentItemsViewBase (T instance)
             : base (instance)
         {
         }

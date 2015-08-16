@@ -4,17 +4,17 @@ using System.Collections;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentMultiPage<TFluent, T, TPage> : FluentPageBase<TFluent, T>
+    public abstract class FluentMultiPageBase<TFluent, T, TPage> : FluentPageBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: MultiPage<TPage>, new()
         where TPage: Page
     {
-        public FluentMultiPage ()
+        public FluentMultiPageBase ()
             : base ()
         {
         }
 
-        public FluentMultiPage (T instance)
+        public FluentMultiPageBase (T instance)
             : base (instance)
         {
         }

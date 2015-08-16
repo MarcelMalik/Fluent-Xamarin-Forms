@@ -5,7 +5,7 @@ using FluentXamarinForms.FluentBase;
 
 namespace FluentXamarinForms
 {
-    public class FluentApplication<T> : FluentElement<FluentApplication<T>, T>
+    public class FluentApplication<T> : FluentElementBase<FluentApplication<T>, T>
         where T : Application, new()
     {
         public FluentApplication ()

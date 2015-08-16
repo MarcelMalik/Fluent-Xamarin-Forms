@@ -3,16 +3,16 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentLayout<TFluent, T> : FluentView<TFluent, T>
+    public abstract class FluentLayoutBase<TFluent, T> : FluentViewBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: Layout, new()
     {
-        public FluentLayout ()
+        public FluentLayoutBase ()
             : base ()
         {
         }
 
-        public FluentLayout (T instance)
+        public FluentLayoutBase (T instance)
             : base (instance)
         {
         }
@@ -71,17 +71,17 @@ namespace FluentXamarinForms.FluentBase
         }
     }
 
-    public abstract class FluentLayout<TFluent, T, TChild> : FluentLayout<TFluent, T>
+    public abstract class FluentLayoutBase<TFluent, T, TChild> : FluentLayoutBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: Layout<TChild>, new()
         where TChild : View//, new()
     {
-        public FluentLayout ()
+        public FluentLayoutBase ()
             : base ()
         {
         }
 
-        public FluentLayout (T instance)
+        public FluentLayoutBase (T instance)
             : base (instance)
         {
         }
@@ -93,7 +93,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChild<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+        public TFluent AddChild<TFluent2, T2> (FluentViewBase<TFluent2, T2> fluentView)
             where TFluent2: FluentBase<T2>
             where T2: TChild, new()// Layout<TChild2>, new()
             //where TChild2 : View

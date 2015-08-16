@@ -5,7 +5,7 @@ using FluentXamarinForms.Extensions;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentGridBase<TFluent, T>  : FluentLayout<TFluent, T, View>
+    public abstract class FluentGridBase<TFluent, T>  : FluentLayoutBase<TFluent, T, View>
         where TFluent: FluentBase<T>
         where T: Grid, new()
     {
@@ -57,7 +57,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChild<TFluent2, T2> (FluentView<TFluent2, T2> fluentView, int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
+        public TFluent AddChild<TFluent2, T2> (FluentViewBase<TFluent2, T2> fluentView, int column = 0, int row = 0, int columnspan = 1, int rowspan = 1)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {
@@ -95,7 +95,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChildHorizontal<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+        public TFluent AddChildHorizontal<TFluent2, T2> (FluentViewBase<TFluent2, T2> fluentView)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {
@@ -115,7 +115,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChildHorizontal<TFluent2, T2> (IEnumerable<FluentView<TFluent2, T2>> fluentViews)
+        public TFluent AddChildHorizontal<TFluent2, T2> (IEnumerable<FluentViewBase<TFluent2, T2>> fluentViews)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {
@@ -135,7 +135,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChildVertical<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+        public TFluent AddChildVertical<TFluent2, T2> (FluentViewBase<TFluent2, T2> fluentView)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {
@@ -153,7 +153,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent AddChildVertical<TFluent2, T2> (IEnumerable<FluentView<TFluent2, T2>> fluentViews)
+        public TFluent AddChildVertical<TFluent2, T2> (IEnumerable<FluentViewBase<TFluent2, T2>> fluentViews)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {

@@ -26,7 +26,7 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
-        public TFluent Content<TFluent2, T2> (FluentView<TFluent2, T2> fluentView)
+        public TFluent Content<TFluent2, T2> (FluentViewBase<TFluent2, T2> fluentView)
             where TFluent2: FluentBase<T2>
             where T2: View, new()
         {

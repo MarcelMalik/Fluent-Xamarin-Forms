@@ -3,15 +3,15 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentElement<TFluent, T> : FluentBindableObject<TFluent, T>
+    public abstract class FluentElementBase<TFluent, T> : FluentBindableObjectBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T : Element, new()
     {
-        public FluentElement ()
+        public FluentElementBase ()
             :base()
         {}
 
-        public FluentElement (T instance)
+        public FluentElementBase (T instance)
             :base(instance)
         {}
 

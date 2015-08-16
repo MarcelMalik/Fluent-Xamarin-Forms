@@ -3,16 +3,16 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentView<TFluent, T> : FluentVisualElement<TFluent, T>
+    public abstract class FluentViewBase<TFluent, T> : FluentVisualElementBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: View, new()
     {
-        public FluentView ()
+        public FluentViewBase ()
             : base ()
         {
         }
 
-        public FluentView (T instance)
+        public FluentViewBase (T instance)
             : base (instance)
         {
         }

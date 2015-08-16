@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public abstract class FluentListViewBase<TFluent, T> : FluentItemsView<TFluent, T, Cell>
+    public abstract class FluentListViewBase<TFluent, T> : FluentItemsViewBase<TFluent, T, Cell>
         where TFluent: FluentBase<T>
         where T: ListView, new()
     {
