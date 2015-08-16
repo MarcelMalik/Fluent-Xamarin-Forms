@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
-    public static partial class Create
+    public partial class Create
     {
         public static FluentAbsoluteLayout AbsoluteLayout (AbsoluteLayout instance = null)
         {
