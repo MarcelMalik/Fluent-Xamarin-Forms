@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public class FluentFrameBase<TFluent, T> : FluentContentViewBase<TFluent, T>
+    public abstract class FluentFrameBase<TFluent, T> : FluentContentViewBase<TFluent, T>
         where TFluent: FluentBase<T>
         where T: Frame, new()
     {

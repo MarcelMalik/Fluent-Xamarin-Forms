@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace FluentXamarinForms.FluentBase
 {
-    public class FluentInputViewBase<TFluent, T> : FluentView<TFluent, T>
+    public abstract class FluentInputViewBase<TFluent, T> : FluentView<TFluent, T>
         where TFluent: FluentBase<T>
         where T: InputView, new()
     {

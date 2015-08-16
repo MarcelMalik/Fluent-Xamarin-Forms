@@ -9,45 +9,48 @@ namespace FluentXamarinForms.FluentBase
         where T : BindableObject, new()
     {
         public FluentBindableObject ()
-            :base()
-        {}
+            : base ()
+        {
+        }
 
         public FluentBindableObject (T instance)
-            :base(instance)
-        {}
-
-        public TFluent Bind(BindableProperty targetProperty, BindingBase binding)
+            : base (instance)
         {
-            this.BuilderActions.Add(bindableObj => {
-                bindableObj.SetBinding(targetProperty, binding); 
-            });
+        }
+
+        public TFluent Bind (BindableProperty targetProperty, BindingBase binding)
+        {
+            this.BuilderActions.Add (bindableObject => {
+                    bindableObject.SetBinding (targetProperty, binding); 
+                });
 
             return this as TFluent;
         }
 
-        /*public TFluent Bind(string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        public TFluent BindingContext (object context)
         {
-            this.BuilderActions.Add(bindableObj => {
-                bindableObj.SetBinding(
-                bindableObj.SetBinding(bindableObj, path, mode, converter, stringFormat); 
-            });
+            this.BuilderActions.Add (bindableObject => {
+                    bindableObject.BindingContext = context;
+                });
 
             return this as TFluent;
         }
 
-        public TFluent Bind<TSource>(Expression<Func<TSource, object>> sourceProperty, 
-            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        public TFluent BindBindingContext (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
         {
-            this.BuilderActions.Add(bindableObj => {
-                bindableObj.SetBinding<TSource>(bindableObj, sourceProperty, mode, converter, stringFormat);
-            });
+            this.BuilderActions.Add (bindableObject => {
+                    bindableObject.SetBinding (BindableObject.BindingContextProperty, path, mode, converter, stringFormat);
+                });
 
             return this as TFluent;
-        }*/
+        }
 
-        public TFluent BindingContext(object context)
+        public TFluent BindBindingContext<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+                                               BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
         {
-            this.BuilderActions.Add (bindableObj => bindableObj.BindingContext = context);
+            this.BuilderActions.Add (bindableObject => {
+                    bindableObject.SetBinding<TSource> (BindableObject.BindingContextProperty, sourceProperty, mode, converter, stringFormat);
+                });
 
             return this as TFluent;
         }

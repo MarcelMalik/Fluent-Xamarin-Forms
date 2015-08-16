@@ -19,35 +19,45 @@ namespace FluentXamarinForms.FluentBase
 
         public TFluent AspectFill ()
         {
-            this.BuilderActions.Add (image => image.Aspect = Aspect.AspectFill);
+            this.BuilderActions.Add (image => {
+                    image.Aspect = Aspect.AspectFill;
+                });
 
             return this as TFluent;
         }
 
         public TFluent AspectFit ()
         {
-            this.BuilderActions.Add (image => image.Aspect = Aspect.AspectFit);
+            this.BuilderActions.Add (image => {
+                    image.Aspect = Aspect.AspectFit;
+                });
 
             return this as TFluent;
         }
 
         public TFluent Fill ()
         {
-            this.BuilderActions.Add (image => image.Aspect = Aspect.Fill);
+            this.BuilderActions.Add (image => {
+                    image.Aspect = Aspect.Fill;
+                });
 
             return this as TFluent;
         }
 
         public TFluent IsOpaque (bool opaque)
         {
-            this.BuilderActions.Add (image => image.IsOpaque = opaque);
+            this.BuilderActions.Add (image => {
+                    image.IsOpaque = opaque;
+                });
 
             return this as TFluent;
         }
 
         public TFluent Source (string source)
         {
-            this.BuilderActions.Add (image => image.Source = source);
+            this.BuilderActions.Add (image => {
+                    image.Source = source;
+                });
 
             return this as TFluent;
         }

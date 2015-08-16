@@ -28,6 +28,25 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindBorderColor (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.BorderColorProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindBorderColor<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.BorderColorProperty, sourceProperty, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
         public TFluent BorderRadius (int radius)
         {
             this.BuilderActions.Add (button => {
@@ -37,11 +56,49 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindBorderRadius (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.BorderRadiusProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindBorderRadius<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.BorderRadiusProperty, sourceProperty, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
         public TFluent BorderWidth (double width)
         {
             this.BuilderActions.Add (button => {
                     button.BorderWidth = width;
                 });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindBorderWidth (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.BorderWidthProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindBorderWidth<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.BorderWidthProperty, sourceProperty, mode, converter, stringFormat);
+            });
 
             return this as TFluent;
         }
@@ -111,11 +168,49 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindFont (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.FontProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindFont<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.FontProperty, sourceProperty, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
         public TFluent FontAttributes (FontAttributes attributes)
         {
             this.BuilderActions.Add (button => {
                     button.FontAttributes = attributes;
                 });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindFontAttributes (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.FontAttributesProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindFontAttributes<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.FontAttributesProperty, sourceProperty, mode, converter, stringFormat);
+            });
 
             return this as TFluent;
         }
@@ -129,6 +224,25 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindFontFamily (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.FontFamilyProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindFontFamily<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.FontFamilyProperty, sourceProperty, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
         public TFluent FontSize (double fontSize)
         {
             this.BuilderActions.Add (button => {
@@ -138,11 +252,49 @@ namespace FluentXamarinForms.FluentBase
             return this as TFluent;
         }
 
+        public TFluent BindFontSize (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.FontSizeProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindFontSize<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.FontSizeProperty, sourceProperty, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
         public TFluent Image (FileImageSource image)
         {
             this.BuilderActions.Add (button => {
                     button.Image = image;
                 });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindImage (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding (Button.FontSizeProperty, path, mode, converter, stringFormat);
+            });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindImage<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+            BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (button => {
+                button.SetBinding<TSource> (Button.FontSizeProperty, sourceProperty, mode, converter, stringFormat);
+            });
 
             return this as TFluent;
         }
