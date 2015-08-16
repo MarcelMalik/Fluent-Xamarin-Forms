@@ -95,6 +95,11 @@ namespace FluentXamarinForms
             return new FluentMasterDetailPage (instance);
         }
 
+        public static FluentMenuItem MenuItem (MenuItem instance = null)
+        {
+            return new FluentMenuItem (instance);
+        }
+
         public static FluentPage Page (Page instance = null)
         {
             return new FluentPage (instance);
@@ -108,6 +113,11 @@ namespace FluentXamarinForms
         public static FluentTextCell TextCell (TextCell instance = null)
         {
             return new FluentTextCell (instance);
+        }
+
+        public static FluentToolbarItem ToolbarItem (ToolbarItem instance = null)
+        {
+            return new FluentToolbarItem (instance);
         }
     }
 }
