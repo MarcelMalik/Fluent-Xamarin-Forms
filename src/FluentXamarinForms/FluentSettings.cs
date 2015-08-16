@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace FluentXamarinForms
 {
@@ -7,6 +8,15 @@ namespace FluentXamarinForms
     /// </summary>
     public static class FluentSettings
     {
+        static FluentSettings ()
+        {
+            PaddingMultiplier = Device.OnPlatform (
+                8, // iOS
+                8, // Android
+                10 // WinPhone
+            );
+        }
+
         /// <summary>
         /// Create all control paddings & spacings with zero values (like CSS Style Reset) for precise custom layouts.
         /// </summary>
@@ -18,6 +28,6 @@ namespace FluentXamarinForms
         /// Idea by Adam J Wolf
         /// Source: https://www.syntaxismyui.com/xamarin-forms-nugget-paddington/
         /// </summary>
-        public static double PaddingMultiplier { get; set; } = 1;
+        public static double PaddingMultiplier { get; set; }
     }
 }
