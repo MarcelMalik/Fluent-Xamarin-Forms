@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
@@ -75,17 +76,27 @@ namespace FluentXamarinForms.FluentBase
 
         public TFluent IsVisible (bool visible)
         {
-            this.BuilderActions.Add (visualElement => visualElement.IsVisible = visible);
+            this.BuilderActions.Add (visualElement => {
+                    visualElement.IsVisible = visible;
+                });
 
             return this as TFluent;
         }
 
-        public TFluent IsVisibleBinding (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null,
-                                        object converterParameter = null, string stringFormat = null, object source = null)
+        public TFluent BindIsVisible (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
         {
             this.BuilderActions.Add (visualElement => {
-                    visualElement.SetBinding (VisualElement.IsVisibleProperty,
-                        new Binding (path, mode, converter, converterParameter, stringFormat, source));
+                    visualElement.SetBinding (VisualElement.IsVisibleProperty, path, mode, converter, stringFormat);
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindIsVisible<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+                                               BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (visualElement => {
+                    visualElement.SetBinding<TSource> (VisualElement.IsVisibleProperty, sourceProperty, mode, converter, stringFormat);
                 });
 
             return this as TFluent;
