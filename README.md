@@ -4,6 +4,10 @@
 [![](https://img.shields.io/github/release/MarcelMalik/Fluent-Xamarin-Forms.svg)](https://github.com/MarcelMalik/Fluent-Xamarin-Forms/releases "Latest release")
 [![](https://www.myget.org/BuildSource/Badge/fluent-xamarin-forms?identifier=2d689f98-504a-48b8-8cf0-d9d32db980b8)](https://www.myget.org/ "Build Status")
 
+NuGet (`master`): [![](http://img.shields.io/nuget/v/fluent-xamarin-forms.svg)](http://www.nuget.org/packages/fluent-xamarin-forms) [![](http://img.shields.io/nuget/dt/fluent-xamarin-forms.svg)](http://www.nuget.org/packages/fluent-xamarin-forms)
+
+MyGet (`dev`):
+[![](http://img.shields.io/myget/fluent-xamarin-forms/v/FluentXamarinForms.svg)](https://www.myget.org/gallery/fluent-xamarin-forms) 
 
 Fluent Xamarin Forms is a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface „Fluent Interface“) for Xamarin.Forms to build the layout of your UI in a fluent way.
 
