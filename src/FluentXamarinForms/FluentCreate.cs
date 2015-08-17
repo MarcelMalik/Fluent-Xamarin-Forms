@@ -110,6 +110,11 @@ namespace FluentXamarinForms
             return new FluentStackLayout (instance);
         }
 
+        public static FluentSwitch Switch (Switch instance = null)
+        {
+            return new FluentSwitch (instance);
+        }
+
         public static FluentTextCell TextCell (TextCell instance = null)
         {
             return new FluentTextCell (instance);
@@ -118,6 +123,11 @@ namespace FluentXamarinForms
         public static FluentToolbarItem ToolbarItem (ToolbarItem instance = null)
         {
             return new FluentToolbarItem (instance);
+        }
+
+        public static FluentViewCell ViewCell (ViewCell instance = null)
+        {
+            return new FluentViewCell (instance);
         }
     }
 }
