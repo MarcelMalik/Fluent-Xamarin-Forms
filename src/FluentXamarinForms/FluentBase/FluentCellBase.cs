@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Linq.Expressions;
 
 namespace FluentXamarinForms.FluentBase
 {
@@ -21,6 +22,17 @@ namespace FluentXamarinForms.FluentBase
         {
             this.BuilderActions.Add (cell => {
                     cell.ContextActions.Add (item);
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent AddContextAction<TFluent2, T2> (FluentMenuItemBase<TFluent2, T2> fluentMenuItem)
+            where TFluent2: FluentBase<T2>
+            where T2: MenuItem, new()
+        {
+            this.BuilderActions.Add (cell => {
+                    cell.ContextActions.Add (fluentMenuItem.Build ());
                 });
 
             return this as TFluent;
@@ -48,6 +60,25 @@ namespace FluentXamarinForms.FluentBase
         {
             this.BuilderActions.Add (cell => {
                     cell.IsEnabled = enabled;
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindIsEnabled (string path, BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (cell => {
+                    cell.SetBinding (Cell.IsEnabledProperty, path, mode, converter, stringFormat);
+                });
+
+            return this as TFluent;
+        }
+
+        public TFluent BindIsEnabled<TSource> (Expression<Func<TSource, object>> sourceProperty, 
+                                               BindingMode mode = BindingMode.Default, IValueConverter converter = null, string stringFormat = null)
+        {
+            this.BuilderActions.Add (cell => {
+                    cell.SetBinding<TSource> (Cell.IsEnabledProperty, sourceProperty, mode, converter, stringFormat);
                 });
 
             return this as TFluent;
