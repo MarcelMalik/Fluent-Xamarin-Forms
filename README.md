@@ -9,7 +9,7 @@ NuGet (`master`): [![](http://img.shields.io/nuget/v/fluent-xamarin-forms.svg)](
 MyGet (`dev`):
 [![](http://img.shields.io/myget/fluent-xamarin-forms/v/FluentXamarinForms.svg)](https://www.myget.org/gallery/fluent-xamarin-forms) 
 
-Fluent Xamarin Forms is a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface „Fluent Interface“) for Xamarin.Forms to build the layout of your UI in a fluent way.
+Fluent Xamarin Forms is a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface "Fluent Interface") for Xamarin.Forms to build the layout of your UI in a fluent way.
 
 ### Usage
 ```csharp
