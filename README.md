@@ -1,19 +1,34 @@
 # Fluent Xamarin Forms
-<p>
-    <a href="https://gitter.im/MarcelMalik/Fluent-Xamarin-Forms#">
-        <img src="https://img.shields.io/badge/gitter-join%20chat%20→-brightgreen.svg"
-             alt="Join the chat at https://gitter.im/MarcelMalik/Fluent-Xamarin-Forms">
-    </a>
-	<a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FMarcelMalik%2FFluent-Xamarin-Forms&screen_name=MarcelMalik&tw_p=followbutton">
-        <img src="https://img.shields.io/badge/twitter-follow%20%40MarcelMalik-blue.svg" alt="Twitter Follow Me">
-    </a>
-	<a href="https://travis-ci.org/MarcelMalik/Fluent-Xamarin-Forms">
-        <img src="https://travis-ci.org/MarcelMalik/Fluent-Xamarin-Forms.svg?branch=master"
-             alt="Build Status">
-    </a>
-    <a href="https://github.com/MarcelMalik/Fluent-Xamarin-Forms/releases">
-        <img src="https://img.shields.io/github/release/MarcelMalik/Fluent-Xamarin-Forms.svg"
-             alt="Latest release">
-    </a>
-</p>
-Fluent Xamarin Forms is an Fluent API for Xamarin.Forms to describe the layout of your Xamarin Forms in a fluent way.
+[![](https://img.shields.io/badge/gitter-join%20chat%20→-brightgreen.svg)](https://gitter.im/MarcelMalik/Fluent-Xamarin-Forms "Join chat")
+[![](https://img.shields.io/badge/twitter-follow%20%40MarcelMalik-blue.svg)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FMarcelMalik%2FFluent-Xamarin-Forms&screen_name=MarcelMalik&tw_p=followbutton "Follow me on Twitter")
+[![](https://img.shields.io/github/release/MarcelMalik/Fluent-Xamarin-Forms.svg)](https://github.com/MarcelMalik/Fluent-Xamarin-Forms/releases "Latest release")
+[![](https://www.myget.org/BuildSource/Badge/fluent-xamarin-forms?identifier=2d689f98-504a-48b8-8cf0-d9d32db980b8)](https://www.myget.org/ "Build Status")
+
+
+Fluent Xamarin Forms is a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface „Fluent Interface“) for Xamarin.Forms to build the layout of your UI in a fluent way.
+
+### Usage
+```csharp
+using FluentXamarinForms;
+
+public class SamplePage : ContentPAge
+{
+    public SamplePage()
+    {
+        // Modify already created objects, like this ContentPage, with handover as a parameter
+        Create.ContentPage (this)
+            .Title("Todo List")
+            // Add directly a toolbar item and bind it
+            .AddToolbarItem (Create.ToolbarItem ()
+                .Text ("Add")
+                .BindCommand ("Add"))
+                // And define the content, like a list view and bind it to "Items"
+                .Content (Create.ListView ()
+                    .BindItemSource ("Items")
+                    .ItemTemplate (new DataTemplate (typeof(TodoItemCell)))
+                    .SeperatorVisibility(SeparatorVisibility.None))
+                // With the final build the Xamarin.Forms controls are created
+                .Build ();
+    }
+}
+```
