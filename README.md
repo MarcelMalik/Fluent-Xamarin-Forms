@@ -40,14 +40,24 @@ public class SamplePage : ContentPAge
     }
 }
 ```
-# Samples
+## Samples
 - [Simple Todo App](https://github.com/MarcelMalik/Fluent-Xamarin-Forms-Samples/tree/master/Todo) that create the UI with Fluent Xamarin Forms
 
-# Thanks to
+## Supported Plattforms
+All Xamarin.Forms Platforms are supported.
+- Xamarin.iOS
+- Xamarin.Android
+- WinRT 
+
+## Planned Features
+- Binding & Style methods that make the life easier. Suggestions? Send me a [message](https://twitter.com/MarcelMalik)!
+- A code generator to generate the Fluent classes for all Xamarin.Forms controls (and custom controls?) with reflection on the fly.
+
+## Thanks to
 - [@adamjwolf](https://twitter.com/adamjwolf) for the great articles on his [blog](https://www.syntaxismyui.com/) with articles like [Xinions – Xamarin.Forms style minions that do the dirty work for you](https://www.syntaxismyui.com/xinions-xamarin-forms-style-minions-that-do-the-dirty-work-for-you/) and [Xamarin.Forms - Nugget - Paddington](https://www.syntaxismyui.com/xamarin-forms-nugget-paddington/). 
 
-# Maintainer(s)
+## Maintainer(s)
 - [@marcelmalik](https://github.com/MarcelMalik) | Twitter: [@marcelmalik](https://twitter.com/MarcelMalik)
 
-# License
+## License
 - [MIT License (MIT)](https://raw.githubusercontent.com/MarcelMalik/Fluent-Xamarin-Forms/master/LICENSE)
