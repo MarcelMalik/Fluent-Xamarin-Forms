@@ -40,6 +40,9 @@ public class SamplePage : ContentPAge
     }
 }
 ```
+# Samples
+- [Simple Todo App](https://github.com/MarcelMalik/Fluent-Xamarin-Forms-Samples/tree/master/Todo) that create the UI with Fluent Xamarin Forms
+
 # Thanks to
 - [@adamjwolf](https://twitter.com/adamjwolf) for the great articles on his [blog](https://www.syntaxismyui.com/) with articles like [Xinions – Xamarin.Forms style minions that do the dirty work for you](https://www.syntaxismyui.com/xinions-xamarin-forms-style-minions-that-do-the-dirty-work-for-you/) and [Xamarin.Forms - Nugget - Paddington](https://www.syntaxismyui.com/xamarin-forms-nugget-paddington/). 
 
