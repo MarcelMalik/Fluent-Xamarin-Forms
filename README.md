@@ -36,3 +36,11 @@ public class SamplePage : ContentPAge
     }
 }
 ```
+# Thanks to
+- [@adamjwolf](https://twitter.com/adamjwolf) for the great articles on his [blog](https://www.syntaxismyui.com/) with articles like [Xinions – Xamarin.Forms style minions that do the dirty work for you](https://www.syntaxismyui.com/xinions-xamarin-forms-style-minions-that-do-the-dirty-work-for-you/) and [Xamarin.Forms - Nugget - Paddington](https://www.syntaxismyui.com/xamarin-forms-nugget-paddington/). 
+
+# Maintainer(s)
+- [@marcelmalik](https://github.com/MarcelMalik) | Twitter: [@marcelmalik](https://twitter.com/MarcelMalik)
+
+# License
+- [MIT License (MIT)](https://raw.githubusercontent.com/MarcelMalik/Fluent-Xamarin-Forms/master/LICENSE)
