@@ -15,6 +15,10 @@ Fluent Xamarin Forms is a [fluent interface](http://en.wikipedia.org/wiki/Fluent
 ```csharp
 using FluentXamarinForms;
 
+// Class for register custom controls
+public class Create : FluentCreate
+{}
+
 public class SamplePage : ContentPAge
 {
     public SamplePage()
